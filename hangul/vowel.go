@@ -19,97 +19,97 @@ type KVowel struct {
 }
 
 var vowels = map[rune]KVowel{
-	'ㅣ': KVowel{
+	'ㅣ': {
 		IsDoubleVowel: false,
 		TonguePos:     frontTongueVowel,
 		TongueShape:   flatVowel,
 		VowelHeight:   highVowel,
 	},
-	'ㅔ': KVowel{
+	'ㅔ': {
 		IsDoubleVowel: false,
 		TonguePos:     frontTongueVowel,
 		TongueShape:   flatVowel,
 		VowelHeight:   midVowel,
 	},
-	'ㅐ': KVowel{
+	'ㅐ': {
 		IsDoubleVowel: false,
 		TonguePos:     frontTongueVowel,
 		TongueShape:   flatVowel,
 		VowelHeight:   lowVowel,
 	},
-	'ㅟ': KVowel{
+	'ㅟ': {
 		IsDoubleVowel: false,
 		TonguePos:     frontTongueVowel,
 		TongueShape:   roundedVowel,
 		VowelHeight:   highVowel,
 	},
-	'ㅚ': KVowel{
+	'ㅚ': {
 		IsDoubleVowel: false,
 		TonguePos:     frontTongueVowel,
 		TongueShape:   roundedVowel,
 		VowelHeight:   midVowel,
 	},
-	'ㅡ': KVowel{
+	'ㅡ': {
 		IsDoubleVowel: false,
 		TonguePos:     backTongueVowel,
 		TongueShape:   flatVowel,
 		VowelHeight:   highVowel,
 	},
-	'ㅓ': KVowel{
+	'ㅓ': {
 		IsDoubleVowel: false,
 		TonguePos:     backTongueVowel,
 		TongueShape:   flatVowel,
 		VowelHeight:   midVowel,
 	},
-	'ㅏ': KVowel{
+	'ㅏ': {
 		IsDoubleVowel: false,
 		TonguePos:     backTongueVowel,
 		TongueShape:   flatVowel,
 		VowelHeight:   lowVowel,
 	},
-	'ㅜ': KVowel{
+	'ㅜ': {
 		IsDoubleVowel: false,
 		TonguePos:     backTongueVowel,
 		TongueShape:   roundedVowel,
 		VowelHeight:   highVowel,
 	},
-	'ㅗ': KVowel{
+	'ㅗ': {
 		IsDoubleVowel: false,
 		TonguePos:     backTongueVowel,
 		TongueShape:   roundedVowel,
 		VowelHeight:   midVowel,
 	},
-	'ㅑ': KVowel{
+	'ㅑ': {
 		IsDoubleVowel: true,
 	},
-	'ㅒ': KVowel{
+	'ㅒ': {
 		IsDoubleVowel: true,
 	},
-	'ㅕ': KVowel{
+	'ㅕ': {
 		IsDoubleVowel: true,
 	},
-	'ㅖ': KVowel{
+	'ㅖ': {
 		IsDoubleVowel: true,
 	},
-	'ㅘ': KVowel{
+	'ㅘ': {
 		IsDoubleVowel: true,
 	},
-	'ㅙ': KVowel{
+	'ㅙ': {
 		IsDoubleVowel: true,
 	},
-	'ㅛ': KVowel{
+	'ㅛ': {
 		IsDoubleVowel: true,
 	},
-	'ㅝ': KVowel{
+	'ㅝ': {
 		IsDoubleVowel: true,
 	},
-	'ㅞ': KVowel{
+	'ㅞ': {
 		IsDoubleVowel: true,
 	},
-	'ㅠ': KVowel{
+	'ㅠ': {
 		IsDoubleVowel: true,
 	},
-	'ㅢ': KVowel{
+	'ㅢ': {
 		IsDoubleVowel: true,
 	},
 }
