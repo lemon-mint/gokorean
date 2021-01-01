@@ -1,6 +1,8 @@
 package hangul
 
-import "errors"
+import (
+	"errors"
+)
 
 //KChar Analyzed Korean Character
 type KChar struct {
@@ -44,13 +46,14 @@ func CharSplit(char rune) (KChar, error) {
 	}
 
 	if isComponent {
+		_, isvowel := vowels[char]
 		return KChar{
 			Char:        char,
 			IsHangul:    IsHangul,
 			IsComponent: true,
 			IsFull:      false,
-			IsVowel:     false,
-			IsConsonant: false,
+			IsVowel:     isvowel,
+			IsConsonant: !isvowel,
 			HasChoSung:  false,
 			HasJungSung: false,
 			HasJongSung: false,
@@ -60,8 +63,7 @@ func CharSplit(char rune) (KChar, error) {
 	ChoSungIndex := ((CharCode - 0xac00) / 28) / 21
 	JungSungIndex := ((CharCode - 0xac00) / 28) % 21
 	JongSungIndex := (CharCode - 0xac00) % 28
-	HasJongSung := JongSungIndex == 0
-
+	HasJongSung := JongSungIndex != 0
 	return KChar{
 		Char:        char,
 		IsHangul:    IsHangul,
