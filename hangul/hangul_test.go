@@ -133,6 +133,17 @@ func TestCharSplit(t *testing.T) {
 			},
 			false,
 		},
+		{
+			"split R (error expected)",
+			args{
+				'R',
+			},
+			KChar{
+				Char:     'R',
+				IsHangul: false,
+			},
+			true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
