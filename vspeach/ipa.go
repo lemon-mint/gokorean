@@ -17,6 +17,15 @@ const BilabialTrill = 3
 //BilabialFricative : Bilabial Fricative like (p\, B)
 const BilabialFricative = 4
 
+//AlveolarPlosive : Alveolar Plosive like (t, d)
+const AlveolarPlosive = 9
+
+//PostalveolarPlosive : Postalveolar Plosive like (t, d)
+const PostalveolarPlosive = 9
+
+//DentalPlosive : Dental Plosive like (t, d)
+const DentalPlosive = 9
+
 //DiacriticNone : Diacritic None
 const DiacriticNone = -1
 

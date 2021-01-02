@@ -126,6 +126,38 @@ var defaultPronunciation = map[rune]struct {
 			Notation:           "m",
 		},
 	},
+	'ㅎ': {
+		IPA{
+			MainClassification: BilabialFricative,
+			IsVowel:            false,
+			Diacritic:          DiacriticNone,
+			Suprasegmental:     SuprasegmentalNone,
+			Tone:               ToneNone,
+			Accent:             AccentNone,
+			Base:               "p\\",
+			Notation:           "p\\",
+		},
+		IPA{
+			MainClassification: BilabialFricative,
+			IsVowel:            false,
+			Diacritic:          DiacriticNone,
+			Suprasegmental:     SuprasegmentalNone,
+			Tone:               ToneNone,
+			Accent:             AccentNone,
+			Base:               "B",
+			Notation:           "B",
+		},
+		IPA{
+			MainClassification: AlveolarPlosive,
+			IsVowel:            false,
+			Diacritic:          DiacriticNone,
+			Suprasegmental:     SuprasegmentalNone,
+			Tone:               ToneNone,
+			Accent:             AccentNone,
+			Base:               "t",
+			Notation:           "t",
+		},
+	},
 }
 
 func analyze(word []rune) {
