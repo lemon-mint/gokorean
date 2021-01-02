@@ -2,14 +2,20 @@ package vspeach
 
 //Caution All IPA markings are based on X-SAMPA standards.
 
+//Muted : Muted sound
+const Muted = 0
+
 //BilabialPlosive : Bilabial Plosive like (p, b)
-const BilabialPlosive = 0
+const BilabialPlosive = 1
 
 //BilabialNasal : Bilabial Nasal like (m)
-const BilabialNasal = 1
+const BilabialNasal = 2
 
 //BilabialTrill : Bilabial Trill like (B\)
-const BilabialTrill = 2
+const BilabialTrill = 3
+
+//BilabialFricative : Bilabial Fricative like (p\, B)
+const BilabialFricative = 4
 
 //DiacriticNone : Diacritic None
 const DiacriticNone = -1
@@ -39,4 +45,15 @@ type IPA struct {
 	Suprasegmental     int
 	Base               string
 	Notation           string
+}
+
+//NoSound No sound is produced, but a virtually added sound for program operation
+var NoSound = IPA{
+	MainClassification: Muted,
+	IsVowel:            false,
+	Diacritic:          DiacriticNone,
+	Tone:               ToneNone,
+	Accent:             AccentNone,
+	Base:               "",
+	Notation:           "",
 }
