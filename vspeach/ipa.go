@@ -37,5 +37,6 @@ type IPA struct {
 	Tone               int
 	Accent             int
 	Suprasegmental     int
+	Base               string
 	Notation           string
 }
