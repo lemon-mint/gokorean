@@ -2,7 +2,7 @@ package vspeach
 
 import "github.com/lemon-mint/gokorean/hangul"
 
-var defaultPronunciation = map[rune]struct {
+var defaultConsonantPronunciation = map[rune]struct {
 	First  IPA
 	Middle IPA
 	End    IPA
@@ -160,10 +160,75 @@ var defaultPronunciation = map[rune]struct {
 	},
 }
 
-func analyze(word []rune) {
+var defaultVowelPronunciation = map[rune]IPA{
+	'ㅏ': IPA{
+		MainClassification: Vowel,
+		IsVowel:            true,
+		Diacritic:          DiacriticNone,
+		Suprasegmental:     SuprasegmentalNone,
+		Tone:               ToneNone,
+		Accent:             AccentNone,
+		Base:               "a",
+		Notation:           "a",
+	},
+	'ㅑ': IPA{
+		MainClassification: Vowel,
+		IsVowel:            true,
+		Diacritic:          DiacriticApical,
+		Suprasegmental:     SuprasegmentalNone,
+		Tone:               ToneNone,
+		Accent:             AccentNone,
+		Base:               "ja",
+		Notation:           "ja_a",
+	},
+}
+
+//Analyze Pronunciation
+func Analyze(word []rune) {
 	kword := make([]hangul.KChar, len(word))
+	kipa := make([]IPA, 0)
 	for i := 0; i < len(word); i++ {
 		kword[i], _ = hangul.CharSplit(word[i])
-
+		if kword[i].IsFull {
+			if i == 0 {
+				if kword[i].HasChoSung {
+					ipa, ok := defaultConsonantPronunciation[kword[i].ChoSung]
+					if ok {
+						kipa = append(kipa, ipa.First)
+					}
+				}
+				if kword[i].HasJungSung {
+					ipa, ok := defaultVowelPronunciation[kword[i].JongSung]
+					if ok {
+						kipa = append(kipa, ipa)
+					}
+				}
+				if kword[i].HasJongSung {
+					ipa, ok := defaultConsonantPronunciation[kword[i].JongSung]
+					if ok {
+						kipa = append(kipa, ipa.End)
+					}
+				}
+			} else {
+				if kword[i].HasChoSung {
+					ipa, ok := defaultConsonantPronunciation[kword[i].ChoSung]
+					if ok {
+						kipa = append(kipa, ipa.Middle)
+					}
+				}
+				if kword[i].HasJungSung {
+					ipa, ok := defaultVowelPronunciation[kword[i].JongSung]
+					if ok {
+						kipa = append(kipa, ipa)
+					}
+				}
+				if kword[i].HasJongSung {
+					ipa, ok := defaultConsonantPronunciation[kword[i].JongSung]
+					if ok {
+						kipa = append(kipa, ipa.End)
+					}
+				}
+			}
+		}
 	}
 }

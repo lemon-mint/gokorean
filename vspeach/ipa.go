@@ -35,6 +35,9 @@ const DiacriticAspirated = 3
 //DiacriticBreathyVoiced : Diacritic Breathy voiced [_t]
 const DiacriticBreathyVoiced = 13
 
+//DiacriticApical : Diacritic Apical [_a]
+const DiacriticApical = 26
+
 //ToneNone : Tone None
 const ToneNone = -1
 
@@ -66,3 +69,6 @@ var NoSound = IPA{
 	Base:               "",
 	Notation:           "",
 }
+
+//Vowel : vowel
+const Vowel = 1000
